@@ -346,7 +346,6 @@ class FrontendController extends Controller
     {
         $product=Product::where('slug',$slug)->first();
         if (!empty($product)) {
-        $ss=ProductSs::where('product_id',$product->id)->get();
         $productCategory=ProductCategory::where('status','1')->with('product')->get();
         $productReview=ProductReview::where('product_id',$product->id)->where('status','1')->get();
         $ipTrack = new ProductViewTrack;
@@ -354,8 +353,7 @@ class FrontendController extends Controller
         $ipTrack->ip_address = \Request::ip();
         $ipTrack->product_id = $product->id;
         $ipTrack->save();
-        $productImages=ProductImage::where('product_id',$product->id)->get();
-        return view('frontend.single-product',compact('product','ss','productCategory','productReview','productImages'));
+        return view('frontend.single-product',compact('product','productCategory','productReview'));
         }else{
             return view('frontend.404');
         }

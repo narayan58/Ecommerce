@@ -23,42 +23,12 @@
       <div class="row">
         <div class="col-lg-6 mb-5 mb-lg-0">
           <div class="row">
-            <div class="col-md-2 order-2 order-md-1">
-              <!-- Slider thumbnails-->
-              <div class="swiper-container swiper-thumbnails" id="detailSliderThumb">
-
-                 <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img class="img-fluid" src="{{ asset($product->image) }}" alt="{{ $product->title }}">
-                  @foreach($productImages as $image)
-                  <div class="swiper-slide"><img class="img-fluid" src="{{ asset($image->image) }}" alt="{{ $product->title }}">
-                  </div>
-                  @endforeach
-                </div>
-              </div>
-
-
-          {{--       <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img class="img-fluid" src="{{ asset('frontend/img/product-detail-2.9164bbad.jpg') }}" alt="..">
-                  </div>
-                  <div class="swiper-slide"><img class="img-fluid" src="{{ asset('frontend/img/product-detail-1.b9fa37cd.jpg') }}" alt="..">
-                  </div>
-                  <div class="swiper-slide"><img class="img-fluid" src="{{ asset('frontend/img/product-detail-3.2d55ea81.jpg') }}" alt="..">
-                  </div>
-                  <div class="swiper-slide"><img class="img-fluid" src="{{ asset('frontend/img/product-detail-4.072fd9d4.jpg') }}" alt="..">
-                  </div>
-                </div> --}}
-              </div>
-            </div>
             <div class="col-md-10 order-1 order-md-2 mb-4 mb-lg-0">
               <!-- Item slider-->
               <div class="swiper-container" id="detailSlider">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide"><a class="glightbox" href="{{ asset($product->image) }}"><img
                         class="img-fluid" src="{{ asset($product->image) }}" alt="{{ $product->title }}"></a></div>
-                  @foreach($productImages as $image)
-                  <div class="swiper-slide"><a class="glightbox" href="{{ asset($image->image) }}"><img
-                        class="img-fluid" src="{{ asset($image->image) }}" alt="{{ $product->title }}"></a></div>
-                  @endforeach
                 </div>
               </div>
             </div>
@@ -66,8 +36,7 @@
         </div>
         <!-- Item info-->
         <div class="col-lg-6">
-{{--           <div class="badge bg-info small rounded-0 mb-2">Trending</div>
- --}}          <h1>{{ $product->title }}</h1>
+         <h1>{{ $product->title }}</h1>
           <div class="d-flex align-items-center">
             <ul class="list-inline mb-2 me-3 small">
               <li class="list-inline-item m-0"><i class="las la-star small text-warning"></i></li>
